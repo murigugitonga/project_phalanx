@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package phalanx;
+
+// Service defining the tactical ingestion stream
+service TelemetryStream {
+    rpc StreamTargets (TargetPayload) returns (IngestionResponse);
+}
+
+// Complete geographical and kinematic footprint of a threat
+message TargetPayload {
+    string system_id = 1;         // Tracking asset identifier (e.g., RADAR-ALPHA)
+    uint64 timestamp = 2;         // Epoch time in milliseconds
+    double latitude = 3;          // Geo-coordinate Latitude
+    double longitude = 4;         // Geo-coordinate Longitude
+    double altitude_meters = 5;   // Altitude relative to sea level
+    float velocity_knots = 6;     // Speed metric
+    ThreatDomain domain = 7;      // Categorized domain of the threat
+}
+
+// Strategic response envelope returned by the ingestion framework
+message IngestionResponse {
+    bool status_acknowledged = 1;
+    uint32 active_target_count = 2;
+}
+
+enum ThreatDomain {
+    UNKNOWN = 0;
+    AIR = 1;
+    LAND = 2;
+    MARITIME = 3;
+    SPACE = 4;
+    CYBER = 5;
+}

@@ -1,0 +1,3 @@
+/workspaces/project_phalanx/src/ingestion/build/CMakeFiles/phalanx_ingest.dir
+/workspaces/project_phalanx/src/ingestion/build/CMakeFiles/edit_cache.dir
+/workspaces/project_phalanx/src/ingestion/build/CMakeFiles/rebuild_cache.dir
