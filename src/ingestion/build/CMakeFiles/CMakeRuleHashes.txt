@@ -1,2 +1,0 @@
-# Hashes of file build rules.
-d133c5f3e7f5b5f96919f64504812c5e generated/telemetry.pb.cc
