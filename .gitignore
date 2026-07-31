@@ -1,3 +1,51 @@
-_pycache_
-/build
-.devcontainer
+# --- System & OS Overheads ---
+.DS_Store
+Thumbs.db
+.crdownload
+
+# --- Development Containers & IDEs ---
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+.history/
+*.code-workspace
+
+# --- C++ Ingestion Build Artifacts ---
+src/ingestion/build/
+src/ingestion/.Xauthority
+*.o
+*.obj
+*.out
+*.exe
+*.so
+*.dylib
+*.a
+
+# --- Generated Protocol Buffer Bindings ---
+# Keeping the source .proto but ignoring the compiled source bridges to force local builds
+src/ingestion/generated/
+src/reasoning/*_pb2.py
+src/reasoning/*_pb2_grpc.py
+
+# --- Python Infrastructure & RAG Stores ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.env
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+
+# --- Embedded Data Vector Repositories ---
+src/reasoning/chroma_db/
+src/reasoning/local_vectors/
+*.db
+*.sqlite
+
+# --- Log files ---
+*.log
